@@ -24,3 +24,12 @@ Thumbs.db
 *.log
 data/raw/*.zip
 data/raw/*.tar.gz
+
+# Node.js
+node_modules/
+*/node_modules/
+dist/
+build/
+.vite/
+*/.vite/
+
