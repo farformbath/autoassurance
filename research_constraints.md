@@ -1,10 +1,14 @@
-# RESEARCH CONSTRAINTS & REVISI BIMBINGAN 1
+# RESEARCH CONSTRAINTS & REVISI BIMBINGAN
 
-Dokumen ini memetakan arahan dosen pembimbing hasil Bimbingan 1 (`bimbingan 1.txt`) ke dalam batasan dan spesifikasi teknis proposal skripsi. Seluruh agen, modul riset, dan naskah wajib mematuhi aturan ini secara ketat.
+Dokumen ini memetakan seluruh arahan dan catatan revisi dosen pembimbing dari dua sumber:
+1. **Catatan Bimbingan 1 (`bimbingan 1.txt`)**: Pergeseran topik ke artikel acuan Ding et al. (2025) dan metode LightGBM-Optuna.
+2. **Catatan Redaksional Dosen Pembimbing (`revisi.md`)**: Standar gaya penulisan, struktur logika Latar Belakang, tipografi, dan tata bahasa baku naskah.
+
+Seluruh agen, modul riset, dan naskah wajib mematuhi aturan ini secara ketat.
 
 ---
 
-## 📌 Pemetaan Arahan Dosen Pembimbing
+## 📌 Bagian 1: Pemetaan Arahan Substantif Bimbingan 1 (`bimbingan 1.txt`)
 
 | No | Catatan Bimbingan (`bimbingan 1.txt`) | Interpretasi Akademis & Implementasi Teknis | Status Kepatuhan |
 |---|---|---|---|
@@ -22,9 +26,27 @@ Dokumen ini memetakan arahan dosen pembimbing hasil Bimbingan 1 (`bimbingan 1.tx
 
 ---
 
-## 🚫 Larangan Keras (Negative Constraints)
-1. **Dilarang memasukkan gambar di Latar Belakang**: Patuhi catatan revisi nomor 5.
-2. **Dilarang menggunakan model selain LightGBM sebagai model usulan utama**: Model lain (XGBoost, Random Forest, SVM, Naive Bayes) hanya dijadikan baseline komparasi sesuai paper acuan.
-3. **Dilarang mengarang data atau hasil evaluasi**: Semua angka metrik dalam eksperimen harus bersumber dari eksekusi nyata pada dataset acuan.
+## ✍️ Bagian 2: Aturan Redaksional, Logika & Tata Bahasa (`revisi.md`)
+
+Aturan ini diambil langsung dari catatan evaluasi dosen pembimbing terdahulu dan wajib ditegakkan pada seluruh penulisan naskah:
+
+| No | Catatan `revisi.md` | Aturan Teknis & Larangan Penulisan | Contoh Implementasi yang Benar |
+|---|---|---|---|
+| 1 | `gap harus dieksplisit di abb 1.1` | **Kesenjangan penelitian (*research gap*) wajib dinyatakan secara eksplisit** pada Subbab 1.1 dengan kalimat deklaratif yang jelas, bukan sekadar tersirat di akhir bab. | *"Kesenjangan penelitian (research gap) yang menjadi fokus utama dalam penelitian ini terletak pada..."* |
+| 2 | `1.1 JANGAN PENGGUNAAN xgbos=ost untuk apa apa apa, murni rumusan masalah, belum sampai sana, baru mencari gap, latar belakang,` | **Latar Belakang bukan tempat memaparkan implementasi solusi.** Dilarang langsung menulis *"Penggunaan LightGBM untuk..."*. Latar Belakang harus murni mengurai fenomena masalah bisnis, kelemahan penanganan manual, kritik atas metode penelitian terdahulu, dan memformulasikan *research gap*. | Awali dengan masalah kerugian klaim asuransi, kelemahan investigator manual, baru menelaah keterbatasan metode terdahulu. |
+| 3 | `model riskscooring seperti aoa, bagian dari keywprd ada pembahasan spesifik seperti apa, dimasukkan ke pembahasan agar semakin jelas, agar konsisten di bab 3, kata kunci di judul harus muncul pada bab 1.1,` | **Seluruh kata kunci pada judul WAJIB muncul dan dibahas secara konseptual di Subbab 1.1**, agar terdapat benang merah yang konsisten dari Bab 1 menuju Bab 3 (misal: *fraud klaim asuransi kendaraan, LightGBM, optimasi hyperparameter Optuna, sistem pendukung keputusan*). | Setiap konsep utama didefinisikan perannya dalam alur penanganan fraud asuransi. |
+| 4 | `penulisan istilah tidak perlu tittle case, (akronim ditulis capital)` | **Istilah teknis dalam kalimat narasi biasa DILARANG menggunakan Title Case** (huruf besar di awal kata). Huruf kapital hanya untuk awal kalimat, nama diri, dan AKRONIM singkatan. | ✅ *sistem pendukung keputusan*, *optimasi hyperparameter*, *penambangan data*.<br>❌ *Sistem Pendukung Keputusan*, *Optimasi Hyperparameter*. |
+| 5 | `kalo singkatan kedepannya tidak dipakai tidak perlu disingkat` | **Dilarang membuat singkatan jika istilah tersebut tidak digunakan berulang kali** pada paragraf berikutnya. Tuliskan nama lengkapnya saja. | Jika hanya disebut 1 kali, tulis *service level agreement* (jangan buat singkatan *SLA* jika tidak pernah dipakai lagi). |
+| 6 | `Bahasa Indonesia inggris pilih salah satu jangan berkali kali` | **Konsistensi bahasa istilah asing**: Pilih satu istilah dan pertahankan secara konsisten. Istilah asing wajib dicetak miring (*italics*). Jangan bergantian memanggil objek yang sama dengan istilah Indonesia lalu Inggris secara acak. | Gunakan konsisten: *fraud klaim* atau *klaim curang* (pilih satu, jangan campur aduk). |
+| 7 | `no repitasi` | **Zero Redundancy**: Dilarang mengulang kalimat, ide, atau fakta yang sama pada paragraf yang berdekatan. Setiap paragraf harus membawa argumen baru. | Setiap paragraf memiliki satu *topic sentence* yang unik. |
+| 8 | `sebgai berikut. tnada titik bukan : tanda titik dua` | **Tanda baca sebelum perincian daftar/poin**: Frasa pengantar *"sebagai berikut."* **WAJIB MENGGUNAKAN TANDA TITIK (.)**, DILARANG menggunakan tanda titik dua (:). | ✅ *"dirumuskan ke dalam 3 pertanyaan penelitian sebagai berikut."*<br>❌ *"...sebagai berikut:"* |
+
+---
+
+## 🚫 Larangan Keras Gabungan (Negative Constraints)
+1. **Dilarang memasukkan gambar di Latar Belakang**: Patuhi catatan `bimbingan 1.txt` poin 5.
+2. **Dilarang menggunakan tanda titik dua (:) setelah "sebagai berikut."**: Wajib gunakan tanda titik (.).
+3. **Dilarang menggunakan Title Case pada kata-kata narasi biasa**: Hanya akronim yang ditulis kapital.
 4. **Dilarang membuat Rumusan Masalah > 3 butir**: Pertahankan tepat 3 RQ selaras arahan bimbingan.
 5. **Dilarang membuat Manfaat Penelitian > 2 kategori**: Pertahankan tepat 2 kategori (Teoretis dan Praktis).
+6. **Dilarang mengarang data atau angka metrik**: Wajib merujuk pada hasil eksekusi nyata dataset di `data/`.
